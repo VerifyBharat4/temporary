@@ -8,6 +8,7 @@ import HackContext from '../Context/HackContext'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getMyCertificate } from '../actions/certificateAction'
+import TableRowSections from './TableRowSections'
 
 
 const UserDashboard = (props) => {
@@ -37,7 +38,7 @@ const UserDashboard = (props) => {
     }
     const heightDefine = () => {
         console.log("Inside the hight define")
-        if (certificates && certificates.length>0) {
+        if (certificates && certificates.length > 0) {
             if (certificates.length > 3) {
                 const str = 100 + (certificates.length - 3) * 10
                 return str
@@ -55,17 +56,32 @@ const UserDashboard = (props) => {
     return (
         <Fragment>
             {loading ? <Loader /> : <Fragment>
-                <div className='certiDiv' style={{height:heightDefine()+"vh"}}>
+                <div className='certiDiv' style={{ height: heightDefine() + "vh" }}>
 
                     <DashBoardNav user={userResult.user} />
 
                     {/* <div ref={folderAddBG} onClick={handleOnCertificatePopupOut} className="certificateOrgToUserShowUp"></div> */}
 
-                    <div className="certiList" >
+                    {/* <div className="certiList" >
                         <h1 style={{ textAlign: "center", marginTop: "2%" }}>Certificates</h1>
                         {certificates ? (certificates.length != 0) ? certificates.map((i, index) => {
                             return <UserDashLIst i={i} givenBy={i.organisation.name} date={i.date} key={index} sno={index} certName={i.name} />
                         }) : <h3 style={{ textAlign: "center", marginTop: "2%" }}>No Certificates Issued</h3> : <h3 style={{ textAlign: "center" }}>No Certificates Issued</h3>}
+                    </div> */}
+
+                    <div className="certiList">
+                        <h1 style={{ textAlign: "center", marginTop: "2%" }}>Certificates</h1>
+                        <table className='userDashTable'>
+                            {/* <Fragment> */}
+                                {certificates ?
+
+                                    (certificates.length != 0) ? certificates.map((i, index) => {
+                                        return <TableRowSections i={i} givenBy={i.organisation.name} date={i.date} sno={index} certName={i.name} />
+                                    })
+
+                                        : <h3 style={{ textAlign: "center", marginTop: "2%" }}>No Certificates Issued</h3> : <h3 style={{ textAlign: "center" }}>No Certificates Issued</h3>}
+                            {/* </Fragment> */}
+                        </table>
                     </div>
                 </div>
             </Fragment>}

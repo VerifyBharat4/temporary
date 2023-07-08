@@ -12,6 +12,9 @@
   padding: 3%;
 
 }
+.awardCont{
+  margin: auto;
+}
 .awards .heading h1 {
   color: #fff;
   font-size: 30px;
@@ -42,4 +45,10 @@
 }
 .awardSection div{
   margin: 2%;
+}
+
+.awardBox{
+  opacity: 0;
+  transform: translateY(100px);
+
 }

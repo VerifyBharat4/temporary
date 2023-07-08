@@ -7,7 +7,7 @@ const Featured = () => {
   return (
     <>
       <section className='featured background'>
-        <div className='container'>
+        <div className='container featureCont'>
           {/* <Heading  title='Your Document with us' /> */}
           <h1 className = "yourDocWithUs">Your Document with Us</h1>
           <FeaturedCard />

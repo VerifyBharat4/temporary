@@ -51,12 +51,12 @@
 
 .button-4 {
     appearance: none;
-    background-color: #FAFBFC;
+    background-color: #9E4784;
     border: 1px solid rgba(27, 31, 35, 0.15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
     box-sizing: border-box;
-    color: #24292E;
+    color: white;
     cursor: pointer;
     display: inline-block;
     font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
@@ -105,6 +105,75 @@
   .button-4:-webkit-details-marker {
     display: none;
   }
+
+
+
+
+  .companyBtn {
+    width: 140px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color:#9E4784;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: .5s;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+  }
+  
+  .IconContainer {
+    position: absolute;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: .5s;
+    color: white;
+  }
+  
+  .icon {
+    border-radius: 1px;
+  }
+  
+  .text {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    transition-duration: .5s;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+  
+  .companyBtn:hover .IconContainer {
+    transform: translateX(50px);
+    border-radius: 40px;
+    transition-duration: .5s;
+  }
+  
+  .companyBtn:hover .text {
+    transform: translate(10px,0px);
+    transition-duration: .5s;
+  }
+  
+  .companyBtn:active {
+    transform: scale(0.95);
+    transition-duration: .5s;
+  }
+
   
 .accountNoCompanyAcc {
     display: flex;
@@ -127,21 +196,23 @@
 .topNavCompanyItems {
   display: flex;
   flex-direction: column;
-  width: 14%;
+  width: 100%;
   /* margin: 5% 22%; */
   justify-content: center;
   margin: auto;
+  gap: 22px;
   /* margin: 15% 0%; */
   margin: 5% auto 23%;
 }
 
 .topNavCompanyItems div{
-  margin: 10%;
+  /* margin: 10%; */
 }
-.accAddUser{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.accAddUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
 }
 .companyBackArea{
     background-color: black;
@@ -154,22 +225,28 @@
     
     opacity: 0.8;
 }
-.addUserPopupWindow{
-    position: fixed;
-    left: 35%;
-    /* right: 50; */
-    background-color: white;
-    height: 40vh;
-    width: 30%;
-    margin: auto;
-    text-align: center;
-    border-radius:15px ;
-    display: none;
-    top: 35vh;
-    flex-direction: column;
-    z-index: 5;
-    justify-content: center;
+
+
+.addUserPopupWindow {
+  position: fixed;
+  left: 35%;
+  background-color: #66347F;
+  height: 40vh;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  border-radius: 15px;
+  display: none;
+  top: 35vh;
+  flex-direction: column;
+  z-index: 5;
+  justify-content: center;
 }
+
+.choose{
+  color: white;
+}
+
 .inpAfterCompanyPopUp{
     border: 1px solid;
 }
@@ -178,7 +255,7 @@
 }
 
 .viewCertUser{
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 .accountListSearchBtn{
     background-color: transparent;
@@ -240,13 +317,14 @@
   .inpFile {
     margin-top: 1rem;
     cursor:"pointer";
-    border-radius: 10px;
+    /* border-radius: 12px; */
+    /* border-radius: 20px; */
   }
   
   .inpFile::file-selector-button {
   /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 
-  box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
+  /* box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17; */
     font-weight: bold;
     color: #222;
     cursor: pointer;
@@ -258,14 +336,21 @@
   background-color: rgb(240, 252, 255);
 }
 
-.selectOptionsDiv{
+.selectOptionsDiv {
   text-align: center;
-  width: 219%;
-  display: flex;
+  /* width: 219%; */
+  /* display: flex; */
   align-items: center;
   /* justify-content: center; */
 }
 
+.selectOptionsDiv h1{
+  color: #fff;
+}
+
+.textArea{
+  color: white;
+}
 
 
 
@@ -277,16 +362,17 @@
   display: block;
   transition: all 0.3s;
   transform: translateY(0rem);
+  color: white;
 }
 
 .form__input {
   font-family: 'Roboto', sans-serif;
-  color: #333;
+  color: white;
   font-size: 1.2rem;
-	margin: 0 auto;
+  margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   border: none;
   width: 90%;
   display: block;
@@ -294,7 +380,6 @@
   /* border-bottom: 0.3rem solid transparent; */
   transition: all 0.3s;
 }
-
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;

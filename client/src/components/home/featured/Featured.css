@@ -14,8 +14,16 @@
   transition:all ease-out 0.5s;
 
 }
+
+.featureCont{
+  margin: auto;
+}
 .featureBox:hover{
   box-shadow: 0 0 20px rgb(246, 246, 246);
+}
+.featureBox{
+  opacity: 0;
+  transform: translateY(60px);
 }
 .featured img {
   width: 65px;
@@ -29,6 +37,7 @@
 }
 .docWithUs{
   display: flex;
+  
   flex-wrap: wrap;
   justify-content: center;
 }

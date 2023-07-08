@@ -1,7 +1,7 @@
 .dashBoardA{
     text-decoration: none;
     padding: 8% 7%;
-    color: #232323;
+    color: white;
     font-weight: bold;
 }
 .dashBoardLi{
@@ -25,7 +25,7 @@
     justify-content: center;
 }
 .dashBoardNav{
-    background-color: #edebeb;
+    background-color: #66347F
     
 }
 
@@ -48,5 +48,10 @@
 
 }
 .dashBoardA:hover{
-    background-color: white;
+    background-color: #2f2f2f;
+}
+
+.certiDiv{
+    background-color: #171717;
+    color: white;
 }

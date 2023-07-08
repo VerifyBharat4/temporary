@@ -42,7 +42,7 @@
 } */
 .container {
   max-width: 80%;
-  margin: auto;
+  /* margin: auto; */
 }
 .flex {
   display: flex;

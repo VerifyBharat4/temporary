@@ -1,7 +1,34 @@
 import React from "react"
 import { featured } from "../../data/Data"
+import { gsap } from 'gsap'
+import { useLayoutEffect, useEffect, useRef } from 'react'
+import { ScrollTrigger, CustomEase, Power3 } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger)
+
 
 const FeaturedCard = () => {
+
+
+
+  useEffect(() => {
+
+    gsap.to(".featureBox", {
+      opacity:1,
+      y:0,
+      duration:0.8,
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:".docWithUs",
+        toggleActions: "restart reverse restart none",
+      }
+
+    })
+    
+    return () => {
+      
+    }
+  }, [])
+  
   return (
     <>
       <div className='content docWithUs mtop'>
